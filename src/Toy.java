@@ -1,13 +1,19 @@
 public class Toy {
     int  weight;
-    Toys name;
+    String name;
     static int ids=0;
     int id;
-Toy(Toys name, int weight  ){
+Toy(String name, int weight  ){
     this.weight=weight;
     this.name=name;
     ids++;
     this.id=ids;
+}
+
+Toy( String name, int weight, int id){
+    this.name=name;
+    this.weight=weight;
+    this.id=id;
 }
 
 
