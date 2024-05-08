@@ -1,26 +1,19 @@
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 public class Shop {
     List <Toy> toys=new ArrayList<>();
     List <Toy> sold=new ArrayList<>();
-    BufferedWriter writer;
 
-    BufferedReader reader;
     String path;
     Shop(List <Toy> toys, String path){
-        try{
-            this.toys.addAll(toys);
-        }catch(NullPointerException e){
-            System.out.println("there is no toys");
-        }
+
+        this.toys.addAll(toys);
         this.path=path;
-        try{
-            this.writer= new BufferedWriter(new OutputStreamWriter(new FileOutputStream(path),"utf-8"));
-            this.reader = new BufferedReader(new InputStreamReader(new FileInputStream(path),"utf-8"));
-            String str= this.reader.readLine();
+
+        try(BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(path)));){
+            String str= reader.readLine();
             String name="";
             int id=0;
             int weight=0;
@@ -36,13 +29,11 @@ public class Shop {
                  }else if(str.contains("}")){
                      sold.add(new Toy(name,weight, id));
                  }
-                 str=this.reader.readLine();
+                 str=reader.readLine();
             }
         } catch (IOException e) {
             System.out.println("io exception");
             throw new RuntimeException(e);
-        } finally {
-            try{writer.close();}catch(Exception e){ System.out.println("не закрывается");}
         }
 
     }
@@ -54,8 +45,10 @@ public class Shop {
     public void sell(Toy toy){
         this.sold.add(toy);
         this.toys.remove(toy);
-        try{writer.newLine();}catch(IOException e) {
-            System.out.println("can't write a sold toy");
+        try(Writer writer=new FileWriter(this.path);){
+            writer.write("{ name: "+toy.name+"\nid: "+toy.id+"\nweight: "+toy.weight+"\n}");
+        }catch(IOException e) {
+            System.out.println("can't write a sold toy: \n"+e);
         }
 
     }

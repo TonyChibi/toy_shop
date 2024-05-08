@@ -15,6 +15,9 @@ Toy( String name, int weight, int id){
     this.weight=weight;
     this.id=id;
 }
-
+ @Override
+    public String toString(){
+    return this.id+": "+this.name+" w: "+this.weight;
+ }
 
 }

@@ -7,6 +7,14 @@ public class Main {
         List <Toy> toys= new ArrayList<>();
         filler.fill(toys);
         Shop shop= new Shop(toys);
-        System.out.println(shop.toys);
+        System.out.println(shop.path);
+        for(Toy toy: shop.toys){
+            System.out.println(toy.toString());
+        }
+        shop.sell(shop.toys.get(shop.toys.size()-1));
+
+        Game game=new Game();
+        Toy prize=game.play(shop.toys);
+        System.out.println("prize: "+prize);
     }
 }
