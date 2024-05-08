@@ -4,5 +4,5 @@ public enum Toys {
     MAN,
     WIFE,
     BALOON,
-    ELECTRICITY
+    ELECTRICITY;
 }
