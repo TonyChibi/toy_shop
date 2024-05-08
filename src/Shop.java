@@ -1,10 +1,11 @@
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
 public class Shop {
-    List <Toy> toys;
-    List <Toy> sold;
+    List <Toy> toys=new ArrayList<>();
+    List <Toy> sold=new ArrayList<>();
     BufferedWriter writer;
 
     BufferedReader reader;
