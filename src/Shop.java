@@ -53,6 +53,12 @@ public class Shop {
 
     }
 
+    public void shuffle_prizes(){
+        Game game=new Game();
+        Toy prize=game.play(this.toys);
+        sell(prize);
+    }
+
     public void extract(Toy toy){
         this.sold.remove(toy);
     }

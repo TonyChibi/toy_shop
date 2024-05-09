@@ -1,4 +1,0 @@
-{ name: dog
-id: 11
-weight: 7
-}
