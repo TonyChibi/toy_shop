@@ -1,0 +1,12 @@
+{ name: wife
+id: 12
+weight: 9
+}
+{ name: car
+id: 9
+weight: 9
+}
+{ name: baloon
+id: 11
+weight: 8
+}

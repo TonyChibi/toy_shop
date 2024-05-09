@@ -11,10 +11,12 @@ public class Main {
         for(Toy toy: shop.toys){
             System.out.println(toy.toString());
         }
-        shop.sell(shop.toys.get(shop.toys.size()-1));
 
+
+        shop.shuffle_prizes();
         Game game=new Game();
         Toy prize=game.play(shop.toys);
         System.out.println("prize: "+prize);
+        System.out.println(shop.sold);
     }
 }

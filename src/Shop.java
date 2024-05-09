@@ -45,8 +45,8 @@ public class Shop {
     public void sell(Toy toy){
         this.sold.add(toy);
         this.toys.remove(toy);
-        try(Writer writer=new FileWriter(this.path);){
-            writer.write("{ name: "+toy.name+"\nid: "+toy.id+"\nweight: "+toy.weight+"\n}");
+        try(Writer writer=new FileWriter(this.path, true);){
+            writer.write("{ name: "+toy.name+"\nid: "+toy.id+"\nweight: "+toy.weight+"\n}\n");
         }catch(IOException e) {
             System.out.println("can't write a sold toy: \n"+e);
         }
