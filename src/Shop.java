@@ -53,10 +53,11 @@ public class Shop {
 
     }
 
-    public void shuffle_prizes(){
+    public Toy shuffle_prizes(){
         Game game=new Game();
         Toy prize=game.play(this.toys);
         sell(prize);
+        return prize;
     }
 
     public void extract(Toy toy){

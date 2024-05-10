@@ -1,4 +1,5 @@
-public class Creator {
+public class Creator  implements ICreator{
+    @Override
     public Toy create(Toys type, int weight){
         Toy toy;
         switch (type){
