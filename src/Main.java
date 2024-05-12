@@ -7,16 +7,7 @@ public class Main {
         List <Toy> toys= new ArrayList<>();
         filler.fill(toys);
         Shop shop= new Shop(toys);
-        System.out.println(shop.path);
-        for(Toy toy: shop.toys){
-            System.out.println(toy.toString());
-        }
-
-
-        shop.shuffle_prizes();
-        Game game=new Game();
-        Toy prize=game.play(shop.toys);
-        System.out.println("prize: "+prize);
-        System.out.println(shop.sold);
+        ShopAPI api= new ShopAPI(shop);
+        api.run();
     }
 }
