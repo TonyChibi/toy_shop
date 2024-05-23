@@ -75,7 +75,8 @@ public class ShopAPI implements IshopAPI{
     public Toy extract(){
         System.out.println(contents.extract);
         this.showSold();
-
+//        this is a false return statement
+        return this.shop.shuffle_prizes();
     }
 
     @Override
