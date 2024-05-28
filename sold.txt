@@ -1,3 +1,4 @@
 {"name":"dog","weight":7,"id":2}
 {"name":"baloon","weight":9,"id":12}
 {"name":"man","weight":8,"id":11}
+{"name":"man","weight":9,"id":1}

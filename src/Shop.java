@@ -54,6 +54,16 @@ public class Shop {
 
     public void extract(Toy toy){
         this.sold.remove(toy);
+        try(Writer writer = new FileWriter(path, false)) {
+            for(Toy item: this.sold) {
+                writer.write((new JSONObject(item.maped())).toJSONString());
+            }
+            } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+
     }
+
+
 
 }
