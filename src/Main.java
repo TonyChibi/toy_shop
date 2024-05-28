@@ -11,8 +11,11 @@ public class Main {
         List <Toy> toys= new ArrayList<>();
         filler.fill(toys);
         Shop shop= new Shop(toys);
-//        ShopAPI api= new ShopAPI(shop);
-//        api.run();
+//ToDo:
+//     shop: extract method
+
+        ShopAPI shopAPI=new ShopAPI(shop);
+        shopAPI.run();
 
 
         try {
