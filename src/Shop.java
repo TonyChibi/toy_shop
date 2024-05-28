@@ -33,6 +33,14 @@ public class Shop {
         this(toys,"sold.txt");
     }
 
+    Shop(){
+        this(new ArrayList<Toy>(), "sold.txt");
+        RandomFiller filler= new RandomFiller();
+        List <Toy> toys= new ArrayList<>();
+        filler.fill(toys);
+        this.toys.addAll(toys);
+    }
+
     public void sell(Toy toy){
         this.sold.add(toy);
         this.toys.remove(toy);

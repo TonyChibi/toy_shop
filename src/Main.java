@@ -7,12 +7,10 @@ import java.util.Map;
 import org.json.simple.*;
 public class Main {
     public static void main(String[] args) {
-        RandomFiller filler= new RandomFiller();
-        List <Toy> toys= new ArrayList<>();
-        filler.fill(toys);
-        Shop shop= new Shop(toys);
+
+        Shop shop= new Shop();
 //ToDo:
-//     shop: extract method
+//     make priority queue and comparator for shop sold and toys
 
         ShopAPI shopAPI=new ShopAPI(shop);
         shopAPI.run();

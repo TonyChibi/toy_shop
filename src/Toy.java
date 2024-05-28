@@ -17,6 +17,7 @@ Toy( String name, int weight, int id){
     this.name=name;
     this.weight=weight;
     this.id=id;
+    ids=id;
 }
 public Map maped(){
     Map map= new HashMap<>();
@@ -28,6 +29,11 @@ public Map maped(){
  @Override
     public String toString(){
     return this.id+": "+this.name+" w: "+this.weight;
+ }
+
+ @Override
+    public int compare(){
+
  }
 
 }

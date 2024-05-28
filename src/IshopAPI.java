@@ -5,6 +5,7 @@ public interface IshopAPI {
     public void showToys();
     public void showSold();
     public Toy extract();
+    public int pickNumber();
 
     public void exit();
 

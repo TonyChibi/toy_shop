@@ -27,6 +27,9 @@ public class ShopAPI implements IshopAPI{
                    play();
                    break;
                case 4:
+                   extract();
+                   break;
+               case 5:
                    this.exit();
                    break;
            }
@@ -46,6 +49,14 @@ public class ShopAPI implements IshopAPI{
         Scanner scanner = new Scanner(System.in);
         int option= scanner.nextInt();
         return option;
+    }
+
+    @Override
+    public int pickNumber(){
+        System.out.println(this.contents.pickNumber);
+        Scanner scanner = new Scanner(System.in);
+        int num= scanner.nextInt();
+        return num;
     }
 
     @Override
@@ -75,8 +86,10 @@ public class ShopAPI implements IshopAPI{
     public Toy extract(){
         System.out.println(contents.extract);
         this.showSold();
-//        this is a false return statement
-        return this.shop.shuffle_prizes();
+        int num = this.pickNumber();
+        Toy prize=this.shop.sold.get(num);
+        this.shop.extract(prize);
+        return prize;
     }
 
     @Override
