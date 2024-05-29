@@ -1,8 +1,5 @@
 import java.io.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 import org.json.simple.*;
 public class Main {
@@ -11,8 +8,11 @@ public class Main {
         Shop shop= new Shop();
 //ToDo:
 //     make priority queue and comparator for shop sold and toys
+        Queue queue = new PriorityQueue();
 
         ShopAPI shopAPI=new ShopAPI(shop);
+        queue.addAll(shop.sold);
+        System.out.println(queue);
         shopAPI.run();
 
 
