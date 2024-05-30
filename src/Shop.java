@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import org.json.simple.*;
 import org.json.simple.parser.JSONParser;
@@ -50,6 +51,7 @@ public class Shop {
         }catch (IOException e){
 
         }
+        sold.sort(null);
 
     }
 
@@ -62,9 +64,10 @@ public class Shop {
 
     public void extract(Toy toy){
         this.sold.remove(toy);
+        this.sold.sort(null);
         try(Writer writer = new FileWriter(path, false)) {
             for(Toy item: this.sold) {
-                writer.write((new JSONObject(item.maped())).toJSONString());
+                writer.write((new JSONObject(item.maped())).toJSONString()+"\n");
             }
             } catch (IOException ex) {
             throw new RuntimeException(ex);
