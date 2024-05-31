@@ -32,7 +32,7 @@ public class Toy implements Comparable <Toy> {
 
     @Override
     public String toString() {
-        return this.id + ": " + this.name + " w: " + this.weight;
+        return "id : "+this.id + ") " + this.name + " w: " + this.weight;
     }
 
 

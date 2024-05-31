@@ -87,7 +87,10 @@ public class ShopAPI implements IshopAPI{
         System.out.println(contents.extract);
         this.showSold();
         int num = this.pickNumber();
-        Toy prize=this.shop.sold.get(num);
+        Toy prize=null;
+        for (Toy item: this.shop.sold) {
+            if(item.id==num) prize=item;
+        }
         this.shop.extract(prize);
         return prize;
     }
