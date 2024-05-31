@@ -11,8 +11,8 @@ public class Contents {
     String confirm="type yes/not";
     String shuffle="GAME started, DICE is rolling";
 
-    String extract="Which toy do you want to extract?";
-    String congrats="\n\tCongrats!!!\n you've won ";
+    String extract="Here is your ";
+    String congrats="\n\tCongrats!!!\n you've won a ";
 
     String pickNumber="Choose the number";
 }

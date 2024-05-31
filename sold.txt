@@ -1,3 +1,5 @@
 {"name":"car","weight":9,"id":2}
-{"name":"car","weight":8,"id":22}
 {"name":"car","weight":8,"id":32}
+{"name":"man","weight":9,"id":40}
+{"name":"wife","weight":9,"id":34}
+{"name":"dog","weight":9,"id":41}

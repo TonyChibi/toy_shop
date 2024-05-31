@@ -84,7 +84,6 @@ public class ShopAPI implements IshopAPI{
 
     @Override
     public Toy extract(){
-        System.out.println(contents.extract);
         this.showSold();
         int num = this.pickNumber();
         Toy prize=null;
@@ -92,6 +91,7 @@ public class ShopAPI implements IshopAPI{
             if(item.id==num) prize=item;
         }
         this.shop.extract(prize);
+        System.out.println(this.contents.extract+prize.name);
         return prize;
     }
 
